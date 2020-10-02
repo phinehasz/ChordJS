@@ -1,4 +1,4 @@
-ChordJS
+和弦JS图
 =======  
 和弦图, 基础例子在 test.html  
 ```
@@ -7,18 +7,14 @@ ChordJS
 ```
 name: 代表和弦名, 如果有附加部分则使用 '-', 会在旁边展示  
 如果是高把位10以上的和弦, 需要用 '-' 分隔符  
-该ChordJs作为基础组件, 理论上支持所有和弦    
+该ChordJs作为基础组件, 理论上支持所有和弦
+
+ChordJS 
 =======
 
 Draw guitar chord diagrams on HTML5 canvas
 
-Chords.js is a small javascript library to generate images of guitar chords in HTML. It can display chord boxes, starting frets, barred chords, fingerings and open and muted strings. Based on: [http://einaregilsson.com/chord-image-generator/](http://einaregilsson.com/chord-image-generator/ "A blog post explaining more about the library")
-
-The original library is a .Net web service that converts urls like:
-
-* [http://chords.einaregilsson.com/D.png?p=xx0232&f=---132&s=3](http://chords.einaregilsson.com/D.png?p=xx0232&f=---132&s=3)
-* [http://chords.einaregilsson.com/A.png?p=x02220&f=--123-&s=3](http://chords.einaregilsson.com/A.png?p=x02220&f=--123-&s=3)
-* [http://chords.einaregilsson.com/A_5.png?p=577655&f=134211&s=3](http://chords.einaregilsson.com/A_5.png?p=577655&f=134211&s=3)
+Chords.js is a small javascript library to generate images of guitar chords in HTML. It can display chord boxes, starting frets, barred chords, fingerings and open and muted strings.  
 
 into images like:
 
@@ -26,7 +22,7 @@ into images like:
 ![Image of a A Chord](http://chords.einaregilsson.com/A.png?p=x02220&f=--123-&s=3 "A Chord")
 ![Image of a A Chord](http://chords.einaregilsson.com/A_5.png?p=577655&f=134211&s=3 "A bar Chord")
 
-There is a small example website at [http://chords.einaregilsson.com](http://chords.einaregilsson.com) where you can try different chords and see how they are constructed for the original library. 
+There is a small example at test.html.  
 
 To use chords.js you can simply convert the url format of the parent library into markup as follows:
 
