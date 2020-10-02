@@ -422,11 +422,11 @@ var ChordJS = (function(){
             var superFont = Font(FONT_NAME, _superScriptFontSize);
             var name;
             var supers;
-            if (_chordName.indexOf('_') == -1) {
+            if (_chordName.indexOf('-') == -1) {
                 name = _chordName;
                 supers = "";
             } else {
-                var parts = _chordName.split('_');
+                var parts = _chordName.split('-');
                 name = parts[0];
                 supers = parts[1];
             }
@@ -438,7 +438,7 @@ var ChordJS = (function(){
             }
             _graphics.DrawString(name, nameFont, _foregroundBrush, xTextStart, 0.2 * _superScriptFontSize);
             if (supers != "") {
-                _graphics.DrawString(supers, superFont, _foregroundBrush, xTextStart + 0.8 * stringSize.Width, 0);
+                _graphics.DrawString(supers, superFont, _foregroundBrush, xTextStart + 1 * stringSize.Width, 0.5 * stringSize.Height);
             }
 
             if (_baseFret > 1) {
@@ -468,7 +468,13 @@ var ChordJS = (function(){
     };  
     
     function GenerateChordHtml(name, positions, fingering, size, layout, stringNames) {
-        if (positions.length != 6 || fingering.length != 6) {
+        var parts;
+        if (positions.length > 6) {
+            parts = positions.split('-');
+        } else {
+            parts = positions.split('');
+        }
+        if (parts.length != 6 || fingering.length != 6) {
             console.error('ChordJS cannot generate a chord diagram from invalid chord input! (Too many positions or fingers.');
             console.log('ChordJS will render an empty chord instead!');
             positions = 'xxxxxx';
